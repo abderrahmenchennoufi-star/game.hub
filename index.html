@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08090d">
+<meta name="description" content="Abderrahmen ch. — مركزك الشخصي">
+<title>Abderrahmen ch.</title>
+<link rel="manifest" href="manifest.json">
+<style>
+:root{--bg:#08090d;--panel:#11131b;--panel2:#171a24;--line:#282b38;--text:#f4f5fb;--muted:#9b9fb0;--gold:#d6b56d;--gold2:#f2dfaa;--green:#74d7a2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#29233a 0,transparent 38%),radial-gradient(ellipse at 0% 35%,#17232c 0,transparent 32%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;min-height:100vh}
+button,input,textarea{font:inherit}button{cursor:pointer}
+.app{max-width:760px;margin:auto;padding:18px 16px 100px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0 25px}
+.brand{display:flex;align-items:center;gap:11px}.logo{width:47px;height:47px;border-radius:16px;background:linear-gradient(145deg,#f4dfa2,#9e7838);color:#14100a;display:grid;place-items:center;font-weight:900;font-size:19px;box-shadow:0 0 28px #d6b56d35}
+.brand h1{font-size:17px;letter-spacing:.3px;margin:0}.brand p{font-size:11px;color:var(--muted);margin:3px 0 0}
+.pill{border:1px solid var(--line);background:#11131bcc;color:var(--muted);padding:8px 11px;border-radius:999px;font-size:12px}
+.hero{position:relative;overflow:hidden;border:1px solid #4a3c27;border-radius:26px;padding:24px 22px;background:linear-gradient(125deg,#1b1b22f2,#11131beF 55%,#262016);box-shadow:0 20px 60px #0006;animation:rise .65s ease both}
+.hero:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;border:1px solid #d6b56d2c;left:-80px;top:-95px;box-shadow:0 0 0 22px #d6b56d08,0 0 0 48px #d6b56d06}
+.eyebrow{font-size:11px;color:var(--gold2);letter-spacing:2px;font-weight:700}.hero h2{font-size:clamp(27px,7vw,38px);line-height:1.25;margin:13px 0 10px;max-width:450px}.hero p{color:#b7b8c2;font-size:14px;line-height:1.8;margin:0 0 20px;max-width:440px}
+.primary{border:0;border-radius:13px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17130b;font-weight:800;padding:12px 16px;box-shadow:0 7px 22px #d6b56d20}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:27px 2px 13px}.section-head h3{font-size:16px;margin:0}.section-head span{color:var(--muted);font-size:11px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.tile{background:linear-gradient(145deg,#171923,#101219);border:1px solid var(--line);border-radius:19px;padding:17px 15px;min-height:132px;text-align:right;color:var(--text);transition:transform .2s,border-color .2s;animation:rise .65s ease both}
+.tile:active{transform:scale(.97)}.tile:hover{border-color:#79643d}.tile .ico{width:38px;height:38px;border-radius:12px;background:#d6b56d18;color:var(--gold2);display:grid;place-items:center;font-size:19px;margin-bottom:14px}.tile b{display:block;font-size:14px}.tile small{display:block;color:var(--muted);font-size:11px;margin-top:5px;line-height:1.5}
+.card{background:#11131bd9;border:1px solid var(--line);border-radius:20px;padding:17px;margin-top:12px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.muted{color:var(--muted);font-size:12px}.goal-line{height:7px;background:#282b38;border-radius:99px;overflow:hidden;margin:13px 0 10px}.goal-fill{height:100%;width:0;background:linear-gradient(90deg,#96763c,var(--gold2));border-radius:99px;transition:width .4s}
+.smallbtn{border:1px solid var(--line);background:#1a1d28;color:var(--text);padding:8px 11px;border-radius:11px;font-size:12px}
+.notes{width:100%;min-height:105px;resize:vertical;background:#0b0d13;border:1px solid var(--line);border-radius:13px;color:var(--text);padding:12px;outline:none}
+.notes:focus,input:focus{border-color:var(--gold)}
+.timer{font-size:42px;font-weight:800;letter-spacing:2px;text-align:center;margin:15px 0;color:var(--gold2);font-variant-numeric:tabular-nums}
+.timer-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.bottom{position:fixed;bottom:0;left:0;right:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#08090de8;backdrop-filter:blur(18px);border-top:1px solid #252733;display:flex;justify-content:center;z-index:5}
+.nav{display:flex;justify-content:space-around;width:min(760px,100%);gap:6px}.nav button{flex:1;border:0;background:transparent;color:var(--muted);padding:8px 4px;border-radius:12px;font-size:11px}.nav button span{display:block;font-size:18px;margin-bottom:3px}.nav button.active{background:#d6b56d17;color:var(--gold2)}
+.toast{position:fixed;top:18px;left:50%;transform:translate(-50%,-20px);opacity:0;pointer-events:none;background:#f2dfaa;color:#16120a;padding:10px 15px;border-radius:12px;font-size:13px;font-weight:700;transition:.25s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
+footer{text-align:center;color:#666b7c;font-size:10px;margin:25px 0 5px}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:600px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.tile{min-height:145px}.hero{padding:30px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand"><div class="logo">A</div><div><h1>Abderrahmen ch.</h1><p>YOUR PERSONAL SPACE</p></div></div>
+  <button class="pill" id="installBtn" hidden>＋ تثبيت</button>
+</header>
+
+<section class="hero" id="home">
+  <div class="eyebrow">نسختك الأفضل تبدأ الآن</div>
+  <h2>فكّر بوضوح.<br>تحرّك بثقة.</h2>
+  <p>مساحتك الخاصة لتنظيم أفكارك، متابعة أهدافك، والتركيز على ما يهمّك — في مكان واحد.</p>
+  <button class="primary" onclick="goTo('tools')">اكتشف أدواتك <span>←</span></button>
+</section>
+
+<div class="section-head" id="tools"><h3>مركز الأدوات</h3><span>أدواتك اليومية</span></div>
+<div class="grid">
+  <button class="tile" onclick="goTo('goals')"><div class="ico">◈</div><b>أهدافي</b><small>حوّل خططك إلى خطوات صغيرة</small></button>
+  <button class="tile" onclick="goTo('focus')"><div class="ico">◷</div><b>مؤقت التركيز</b><small>وقت هادئ لإنجاز مهمة واحدة</small></button>
+  <button class="tile" onclick="goTo('notes')"><div class="ico">✎</div><b>دفتر الملاحظات</b><small>أفكارك محفوظة على جهازك</small></button>
+  <button class="tile" onclick="shareApp()"><div class="ico">↗</div><b>شارك التطبيق</b><small>أرسل فكرتك للآخرين</small></button>
+</div>
+
+<section id="goals">
+  <div class="section-head"><h3>هدف اليوم</h3><span id="goalCount">0 من 3</span></div>
+  <div class="card">
+    <label class="row"><span>إنجاز مهمة مهمة</span><input type="checkbox" class="goalcheck" style="accent-color:#d6b56d;width:19px;height:19px"></label>
+    <div class="goal-line"><div class="goal-fill"></div></div>
+    <label class="row" style="margin-top:15px"><span>تعلّم شيء جديد</span><input type="checkbox" class="goalcheck" style="accent-color:#d6b56d;width:19px;height:19px"></label>
+    <div class="goal-line"><div class="goal-fill"></div></div>
+    <label class="row" style="margin-top:15px"><span>خصص وقتًا لنفسك</span><input type="checkbox" class="goalcheck" style="accent-color:#d6b56d;width:19px;height:19px"></label>
+    <div class="goal-line"><div class="goal-fill"></div></div>
+    <button class="smallbtn" style="margin-top:12px" onclick="resetGoals()">إعادة ضبط الأهداف</button>
+  </div>
+</section>
+
+<section id="focus">
+  <div class="section-head"><h3>جلسة تركيز</h3><span>25 دقيقة</span></div>
+  <div class="card">
+    <div class="muted" style="text-align:center">ابدأ جلسة قصيرة وامنح مهمتك انتباهك</div>
+    <div class="timer" id="timer">25:00</div>
+    <div class="timer-actions"><button class="primary" id="timerToggle" onclick="toggleTimer()">ابدأ التركيز</button><button class="smallbtn" onclick="resetTimer()">إعادة</button></div>
+  </div>
+</section>
+
+<section id="notes">
+  <div class="section-head"><h3>مساحة أفكارك</h3><span>حفظ تلقائي</span></div>
+  <div class="card">
+    <textarea class="notes" id="noteText" placeholder="اكتب فكرة، خطة، أو شيئًا تريد تذكّره..."></textarea>
+    <div class="row" style="margin-top:10px"><span class="muted" id="saveStatus">يُحفظ على هذا الجهاز</span><button class="smallbtn" onclick="clearNotes()">مسح الملاحظات</button></div>
+  </div>
+</section>
+
+<footer>ABDER RAHMEN CH. · إصدار شخصي 1.0</footer>
+</div>
+<div class="bottom"><nav class="nav">
+  <button class="active" onclick="goTo('home',this)"><span>⌂</span>الرئيسية</button>
+  <button onclick="goTo('tools',this)"><span>▦</span>الأدوات</button>
+  <button onclick="goTo('goals',this)"><span>◈</span>الأهداف</button>
+  <button onclick="goTo('notes',this)"><span>✎</span>ملاحظاتي</button>
+</nav></div>
+<div class="toast" id="toast">تم</div>
+<script>
+const $=id=>document.getElementById(id);
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2100)}
+function goTo(id,btn){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active')}
+const checks=[...document.querySelectorAll('.goalcheck')];
+function updateGoals(){let done=checks.filter(c=>c.checked).length;$('goalCount').textContent=done+' من 3';document.querySelectorAll('.goal-fill').forEach((el,i)=>el.style.width=(checks[i].checked?100:0)+'%');localStorage.setItem('ach_goals',JSON.stringify(checks.map(c=>c.checked)))}
+checks.forEach(c=>c.addEventListener('change',updateGoals));
+try{const saved=JSON.parse(localStorage.getItem('ach_goals')||'[]');checks.forEach((c,i)=>c.checked=!!saved[i]);updateGoals()}catch(e){}
+function resetGoals(){checks.forEach(c=>c.checked=false);updateGoals();toast('تمت إعادة ضبط الأهداف')}
+$('noteText').value=localStorage.getItem('ach_notes')||'';
+$('noteText').addEventListener('input',()=>{localStorage.setItem('ach_notes',$('noteText').value);$('saveStatus').textContent='تم الحفظ ✓'});
+function clearNotes(){if(confirm('هل تريد مسح جميع الملاحظات؟')){$('noteText').value='';localStorage.removeItem('ach_notes');toast('تم مسح الملاحظات')}}
+let seconds=1500, interval=null;
+function renderTimer(){$('timer').textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0')}
+function toggleTimer(){if(interval){clearInterval(interval);interval=null;$('timerToggle').textContent='متابعة'}else{$('timerToggle').textContent='إيقاف مؤقت';interval=setInterval(()=>{if(seconds>0){seconds--;renderTimer()}else{clearInterval(interval);interval=null;$('timerToggle').textContent='ابدأ التركيز';toast('أحسنت! انتهت جلسة التركيز')}},1000)}}
+function resetTimer(){clearInterval(interval);interval=null;seconds=1500;renderTimer();$('timerToggle').textContent='ابدأ التركيز'}
+async function shareApp(){if(navigator.share){try{await navigator.share({title:'Abderrahmen ch.',text:'جرّب مركزي الشخصي الأسود الفاخر!'})}catch(e){}}else{toast('يمكنك مشاركة رابط الموقع بعد نشره')}}
+let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;$('installBtn').hidden=false});
+$('installBtn').addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null}else toast('افتح قائمة المتصفح واختر إضافة إلى الشاشة الرئيسية')});
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script>
+</body></html>
